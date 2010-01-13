@@ -8,9 +8,9 @@
 <% @claims.each do |claim| %>
   <tr>
     <td><%=h claim.name %></td>
-    <td><%= link_to 'Show', claim %></td>
+    <td><%= link_to 'Visa', claim %></td>
     <td><%= link_to 'Ändra', edit_claim_path(claim) %></td>
-    <td><%= link_to 'Destroy', claim, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Ta bort', claim, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
