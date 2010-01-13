@@ -35,24 +35,3 @@
 
 <%= link_to 'Ändra', edit_card_path(@card) %> |
 <%= link_to 'Tillbaka', cards_path %>
-
-<script type="text/javascript" charset="utf-8">
-<!--
-  // Logic to execute when the end user clicks the element
-  function myOnClickFunction(elem) {
-    alert(elem);
-  }
-
-  // Register the onclick event for all elements the given class name
-  window.onload = function() {
-    // Find all elements that use that given CSS class
-    var elements = document.getElementsByClassName("square");
-    elements.each(
-      function(e) {
-        // Assign the onclick method to the element
-        Event.observe(e, "click", myOnClickFunction);
-      }
-    );
-  }
--->
-</script>
