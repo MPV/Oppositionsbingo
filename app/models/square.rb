@@ -1,4 +1,4 @@
 class Square < ActiveRecord::Base
   belongs_to :card
-  has_one :claim
+  belongs_to :claim
 end

@@ -1,8 +1,29 @@
+<h2>Bingokort nr <%= @card.id %></h2>
 <p>
-  <b>Owner:</b>
-  <%=h @card.owner %>
+  Ägs av <%=h @card.owner %>.
 </p>
 
+<%
+  num_squares = @card.squares.length - 1
+%>
+
+<table class="card_table">
+<% for i in 0..num_squares do %>
+  
+  <% if i % 3 == 0 %>
+    <tr>
+  <% end %>
+  
+  <td>
+    <%= @card.squares[i].claim.name %>
+  </td>
+  
+  <% if i % 3 == 2 %>
+    </tr>
+  <% end %>
+  
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back', cards_path %>

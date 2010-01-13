@@ -41,9 +41,27 @@ class CardsController < ApplicationController
   # POST /cards.xml
   def create
     @card = Card.new(params[:card])
+    save_status = @card.save
+    
+    claims = Claim.find(:all, :order => 'random()')
+    #claims = Claim.find :all, :offset => ( Claim.count * rand ).to_i, :limit => 9
+    
+    for i in 0..8 do
+      
+      @card.squares.create :claim_id => claims[i].id
+      
+    end
+    
+    #num_claims = 9
+    
+    #for i in 1..9 do
+      
+    #end
+    
+    #@card.squares.create
 
     respond_to do |format|
-      if @card.save
+      if save_status
         flash[:notice] = 'Card was successfully created.'
         format.html { redirect_to(@card) }
         format.xml  { render :xml => @card, :status => :created, :location => @card }
