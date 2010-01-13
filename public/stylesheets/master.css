@@ -9,12 +9,23 @@ html, body{
 
 th{
     text-align: left;
+    vertical-align: top;
+}
+
+td{
+    vertical-align: top;    
 }
 
 #content{
     margin: 0 auto;
     margin-top: 1em;
     width: 700px;
+}
+
+#logo a{
+    color: #000;
+    padding-left: 1em;
+    text-decoration: none;
 }
 
 #container{
@@ -27,6 +38,7 @@ th{
     height: 2em;
     margin: 0;
     padding: 0;
+    padding-left: 2em;
 }
 
 #menu li{
@@ -97,7 +109,7 @@ table.card_squares_table td a:hover{
     color: #000;
     display: block;
     margin: 2em auto;
-    padding: 1em 2em;
+    padding: 0.5em 2em 1em 2em;
 }
 
 #versions_table{
@@ -112,8 +124,9 @@ table.card_squares_table td a:hover{
     padding-bottom: 1em;
 }
 
-#versions_table .date_column{
-    width: 9em;
+#versions_table .date{
+    color: #888;
+    width: 9.5em;
 }
 
 #rules_list{
