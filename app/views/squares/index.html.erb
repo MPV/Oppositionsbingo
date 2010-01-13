@@ -1,21 +1,21 @@
-<h1>Listing squares</h1>
+<h1>Alla rutor</h1>
 
 <table>
   <tr>
-    <th>Card</th>
-    <th>Claim</th>
-    <th>Used?</th>
+    <th>Bingobricka</th>
+    <th>Påstående</th>
+    <th>Uppfyllt?</th>
   </tr>
 
 <% @squares.each do |square| %>
   <tr>
-    <td><%=h square.card_id %></td>
-    <td><%=h square.claim_id %></td>
+    <td><%= link_to h(square.card.owner), square.card %></td>
+    <td><%= link_to square.claim.name, square.claim %></td>
     <td>
       <% if square.used == true %>
-        Yes
+        Ja
       <% else %>
-        No
+        Nej
       <% end %>
     </td>
     <td><%= link_to 'Visa', square %></td>
@@ -27,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New square', new_square_path %>
+<%= link_to 'Ny ruta', new_square_path %>

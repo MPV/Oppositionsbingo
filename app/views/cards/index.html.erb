@@ -3,11 +3,13 @@
 <table id="cards_table">
   <tr>
     <th>Ägare</th>
+    <th>Klara rutor</th>
   </tr>
 
 <% @cards.each do |card| %>
   <tr>
     <td><%=h card.owner %></td>
+    <td><%=h card.used_squares.count %> av 9</td>
     <td><%= link_to 'Visa', card %></td>
     <td><%= link_to 'Ändra', edit_card_path(card) %></td>
     <td><%= link_to 'Ta bort', card, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -17,4 +19,4 @@
 
 <br />
 
-<%= link_to 'New card', new_card_path %>
+<%= link_to 'Ny bingobricka', new_card_path %>

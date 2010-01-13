@@ -62,7 +62,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if save_status
-        flash[:notice] = 'Card was successfully created.'
+        flash[:notice] = 'Här är din bingobricka:'
         format.html { redirect_to(@card) }
         format.xml  { render :xml => @card, :status => :created, :location => @card }
       else
@@ -79,7 +79,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.update_attributes(params[:card])
-        flash[:notice] = 'Card was successfully updated.'
+        flash[:notice] = 'Bingobrickan ändrades.'
         format.html { redirect_to(@card) }
         format.xml  { head :ok }
       else
@@ -94,6 +94,12 @@ class CardsController < ApplicationController
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
+    
+    squares = Square.find(:all, :conditions => { :card_id => params[:id] })
+    
+    for square in squares
+      square.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to(cards_url) }

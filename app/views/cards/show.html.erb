@@ -1,4 +1,4 @@
-<h2>Bingokort nr <%= @card.id %></h2>
+<h2>Bingobricka nr <%= @card.id %></h2>
 <p>
   Ägs av <%=h @card.owner %>.
 </p>
@@ -7,7 +7,7 @@
   num_squares = @card.squares.length - 1
 %>
 
-<table class="card_table">
+<table class="card_squares_table">
 <% for i in 0..num_squares do %>
   
   <% if i % 3 == 0 %>
