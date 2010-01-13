@@ -10,10 +10,10 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
-
 <div id="content">
-  <h1>Oppositionsbingo</h1>
+  <h1>
+    <%= link_to 'Oppositionsbingo', root_url %>
+  </h1>
   <ul id="menu">
     <li><%= link_to 'Hem', root_path %></li>
     <li><%= link_to 'Bingobrickor', cards_path %></li>
@@ -22,6 +22,7 @@
     <li><%= link_to 'Versioner', '/versions' %></li>
   </ul>
   <div id="container">
+    <p style="color: green"><%= flash[:notice] %></p>
     <%= yield %>
   </div>
 </div>

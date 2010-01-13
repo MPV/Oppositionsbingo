@@ -1,8 +1,8 @@
-<h1>Listing claims</h1>
+<h1>Alla påståenden</h1>
 
-<table>
+<table id="claims_table">
   <tr>
-    <th>Name</th>
+    <th>Påstående</th>
   </tr>
 
 <% @claims.each do |claim| %>
@@ -17,4 +17,4 @@
 
 <br />
 
-<%= link_to 'New claim', new_claim_path %>
+<%= link_to 'Nytt påstående', new_claim_path %>

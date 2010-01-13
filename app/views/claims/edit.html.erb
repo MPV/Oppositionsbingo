@@ -1,14 +1,14 @@
-<h1>Editing claim</h1>
+<h1>Ändrar påstående</h1>
 
 <% form_for(@claim) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Själva påståendet' %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Uppdatera' %>
   </p>
 <% end %>
 

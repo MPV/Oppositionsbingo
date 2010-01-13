@@ -25,10 +25,10 @@ class SquaresController < ApplicationController
     
     @square = Square.find(params[:id])
     
-    if @square.used == false
-      @square.used = true
-    else
+    if @square.used == true
       @square.used = false
+    else
+      @square.used = true
     end
     
     if @square.save

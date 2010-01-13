@@ -48,7 +48,7 @@ class CardsController < ApplicationController
     
     for i in 0..8 do
       
-      @card.squares.create :claim_id => claims[i].id, :order => i
+      @card.squares.create :claim_id => claims[i].id, :position => i
       
     end
     

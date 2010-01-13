@@ -1,10 +1,24 @@
 <p>
-  <b>Name:</b>
+  <b>Själva påståendet:</b>
   <%=h @claim.name %>
 </p>
 
 <% if @claim.used_squares.length > 0 %>
-  mer än 0
+  
+  <h4>Dessa har markerat påståendet som uppfyllt:</h4>
+  
+  <ul>
+  <% for square in @claim.used_squares %>
+    <li>
+      <%= link_to square.card.owner, square.card %>
+    </li>
+  <% end %>
+  </ul>
+
+<% else %>
+
+  <h4>Ingen har markerat detta påstående som uppfyllt än.</h4>
+
 <% end %>
 
 <%= link_to 'Ändra', edit_claim_path(@claim) %> |

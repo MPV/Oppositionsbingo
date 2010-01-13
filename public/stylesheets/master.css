@@ -77,3 +77,35 @@ table.card_table td a:hover{
     background: green;
     color: white;
 }
+
+#versions_table{
+    
+}
+
+#versions_table th{
+    text-align: left;
+}
+
+#versions_table td{
+    padding-bottom: 1em;
+}
+
+#versions_table .date_column{
+    width: 9em;
+}
+
+#rules_list{
+    
+}
+
+#rules_list li{
+    padding: 0.5em 0 1em 0;
+}
+
+#instructions_list li{
+    padding: 0.5em 0 0.5em 0;
+}
+
+#cards_table{
+    width: 100%;
+}

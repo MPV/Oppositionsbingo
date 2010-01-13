@@ -1,13 +1,13 @@
 <p>
   Det här är ett bingo där man får en bricka med slumpade rutor. Varje ruta är ett påstående som kan bli sant någon gång under redovisningarna. 
-  Markera då den rutan (OBS! Markering av rutor ej implementerat ännu). När du fått 3 rutor i rad så har du fått bingo. Då är det kotym att ropa BINGO!
+  Markera då den rutan. När du fått 3 rutor i rad så har du fått bingo. Då är det kotym att ropa BINGO!
 </p>
 
 <h2>Tydligare förklaring:</h2>
-<ol>
+<ol id="instructions_list">
   <li>Klicka på länken nedanför</li>
   <li>Fyll i ditt namn (så du kan hitta din bricka om du tappar bort den)</li>
-  <li>Du har nu fått din slumpade bricka! <strong>Spela på!</strong></li>
+  <li><strong>Spela på!</strong></li>
 </ol>
 
 <h3><%= link_to 'Ge mig en ny bingobricka', new_card_path, { :id => 'new_card_button' } %></h3>
