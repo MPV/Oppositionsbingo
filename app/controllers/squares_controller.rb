@@ -21,6 +21,24 @@ class SquaresController < ApplicationController
     end
   end
 
+  def daub
+    
+    @square = Square.find(params[:id])
+    
+    if @square.used == false
+      @square.used = true
+    else
+      @square.used = false
+    end
+    
+    if @square.save
+      redirect_to(:back)
+    else
+      # What errors do we need to show?
+    end
+    
+  end
+
   # GET /squares/new
   # GET /squares/new.xml
   def new

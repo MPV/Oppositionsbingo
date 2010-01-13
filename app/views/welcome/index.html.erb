@@ -5,18 +5,18 @@
 
 <h2>Tydligare förklaring:</h2>
 <ol>
-  <li>Tryck på Bingobrickor-länken nedanför</li>
-  <li>Tryck på knappen New card</li>
-  <li>Fyll i ditt namn och tryck på Create</li>
+  <li>Klicka på länken nedanför</li>
+  <li>Fyll i ditt namn (så du kan hitta din bricka om du tappar bort den)</li>
   <li>Du har nu fått din slumpade bricka! <strong>Spela på!</strong></li>
 </ol>
 
-<h3>Följande delar finns i systemet:</h3>
-<ul>
-  <li><%= link_to 'Bingobrickor', cards_path %></li>
-  <li><%= link_to 'Påståenden', claims_path %></li>
-</ul>
+<h3><%= link_to 'Ge mig en ny bingobricka', new_card_path, { :id => 'new_card_button' } %></h3>
+
+<h3>"Disclaimer"</h3>
 
 <p>
   Den här produkten påbörjades idag (onsdagen 13:e januari) och har nyss lanserats. Ha lite tålamod och kom gärna med önskemål om nya funktioner.
+</p>
+<p>
+  Mvh Victor
 </p>

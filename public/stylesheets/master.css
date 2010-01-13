@@ -1,6 +1,10 @@
-body{
+html, body{
     background: #f1f1f1;
     font-family: Helvetica, Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 #content{
@@ -33,21 +37,43 @@ table.card_table{
 }
 table.card_table td{
     background: #fff;
-    cursor: pointer;
+/*    cursor: pointer;*/
     height: 8em;
     padding: 1em;
     text-align: center;
     width: 8em;
 }
-/*
-table.card_table td a{
-    display: block;
-    height: 10em;
-    padding: 1em;
-    text-align: center;
-    width: 10em;
+table.card_table td.used{
+    background: lightgreen;
+    color: green;
 }
-*/
+table.card_table td.used a{
+    color: green;
+    text-decoration: none;
+}
+table.card_table td a{
+    color: black;
+    display: block;
+    height: 100%;
+/*    padding: 1em;*/
+    text-align: center;
+    width: 100%;
+}
 table.card_table td a:hover{
-    background: #ddd !important;
+/*    background: #ddd !important;*/
+}
+
+#new_card_button{
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    background: #lightgreen;
+    color: #000;
+    display: block;
+    margin: 0 auto;
+    padding: 1em 2em;
+}
+
+#new_card_button:hover{
+    background: green;
+    color: white;
 }

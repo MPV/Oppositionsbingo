@@ -3,6 +3,9 @@
   <%=h @claim.name %>
 </p>
 
+<% if @claim.used_squares.length > 0 %>
+  mer än 0
+<% end %>
 
 <%= link_to 'Ändra', edit_claim_path(@claim) %> |
 <%= link_to 'Tillbaka', claims_path %>

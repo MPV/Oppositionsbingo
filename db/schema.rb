@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100113085821) do
+ActiveRecord::Schema.define(:version => 20100113113936) do
 
   create_table "cards", :force => true do |t|
     t.string   "owner"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20100113085821) do
     t.integer  "claim_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "used"
   end
 
 end

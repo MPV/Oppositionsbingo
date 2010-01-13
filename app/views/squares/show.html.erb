@@ -8,6 +8,15 @@
   <%=h @square.claim_id %>
 </p>
 
+<p>
+  <b>Used:</b>
+  <% if @square.used == true %>
+    Yes
+  <% else %>
+    No
+  <% end %>
+</p>
+
 
 <%= link_to 'Ändra', edit_square_path(@square) %> |
 <%= link_to 'Tillbaka', squares_path %>

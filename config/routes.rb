@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :squares
   map.resources :claims
 
+  map.connect 'squares/:id/daub', :controller => 'squares', :action => 'daub'
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
