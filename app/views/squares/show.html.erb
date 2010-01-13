@@ -1,0 +1,13 @@
+<p>
+  <b>Card:</b>
+  <%=h @square.card_id %>
+</p>
+
+<p>
+  <b>Claim:</b>
+  <%=h @square.claim_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_square_path(@square) %> |
+<%= link_to 'Back', squares_path %>
