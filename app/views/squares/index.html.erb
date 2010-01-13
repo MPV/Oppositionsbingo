@@ -4,12 +4,20 @@
   <tr>
     <th>Card</th>
     <th>Claim</th>
+    <th>Used?</th>
   </tr>
 
 <% @squares.each do |square| %>
   <tr>
     <td><%=h square.card_id %></td>
     <td><%=h square.claim_id %></td>
+    <td>
+      <% if square.used == true %>
+        Yes
+      <% else %>
+        No
+      <% end %>
+    </td>
     <td><%= link_to 'Show', square %></td>
     <td><%= link_to 'Ändra', edit_square_path(square) %></td>
     <td><%= link_to 'Destroy', square, :confirm => 'Are you sure?', :method => :delete %></td>
