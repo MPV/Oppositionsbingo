@@ -1,7 +1,7 @@
 class CreateClaims < ActiveRecord::Migration
   def self.up
     create_table :claims do |t|
-      t.String :title
+      t.string :title
 
       t.timestamps
     end
