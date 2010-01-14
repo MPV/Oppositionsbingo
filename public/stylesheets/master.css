@@ -53,43 +53,56 @@ a:hover{
 
 table.card_squares_table{
     background: #fff;
+    border-spacing: 1em;
     font-size: 80%;
     height: 30em;
     margin: 2em auto;
     width: 75%;
 }
 table.card_squares_table td{
-    background: #f1f1f1;
+    background: #e3e3e3;
 /*    cursor: pointer;*/
     height: 33%;
     padding: 0;
     text-align: center;
     width: 33%;
 }
-table.card_squares_table td.used{
-    background: lightgreen;
-    color: green;
-}
-table.card_squares_table td.used a{
-    color: black;
-    text-decoration: none;
-}
-table.card_squares_table td.used a:hover{
-    background: lightgreen !important;
-    color: black;
-}
+
 table.card_squares_table td a{
+    border: 0.5em solid #e3e3e3;
     color: black;
     cursor: pointer;
     display: block;
     height: 100%;
     padding: 1em;
     text-align: center;
+    text-decoration: none;
     /*width: 7em;*/
 }
+
 table.card_squares_table td a:hover{
-    background: #e3e3e3 !important;
+/*    background: #f1f1f1;*/
+    border-color: #999;
+/*    text-decoration: underline;*/
 }
+
+table.card_squares_table td.used{
+    background: lightgreen;
+    color: green;
+}
+
+table.card_squares_table td.used a{
+    border-color: lightgreen;
+    color: black;
+    text-decoration: none;
+}
+
+table.card_squares_table td.used a:hover{
+    border-color: #999;
+    background: lightgreen !important;
+    color: black;
+}
+
 
 #new_card_button{
     -moz-border-radius: 1em;
@@ -137,7 +150,9 @@ table.card_squares_table td a:hover{
 
 .index_row_count{
     color: #ccc;
+/*    float: right;*/
     font-size: 80%;
+    margin-left: 0.5em;
 }
 
 .index_table{
