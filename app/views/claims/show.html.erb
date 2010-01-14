@@ -1,11 +1,15 @@
+<h1><%=h @claim.name %></h1>
+
+<!--
 <p>
   <b>Själva påståendet:</b>
   <%=h @claim.name %>
 </p>
+-->
 
 <% if @claim.used_squares.length > 0 %>
   
-  <h4>Hänt enligt:</h4>
+  <h4>Detta har hänt enligt:</h4>
   
   <ul>
   <% for square in @claim.used_squares %>
@@ -13,7 +17,7 @@
       <% if square.card.nil? %>
         Bingobrickan saknas.
       <% else %>
-        <%= link_to square.card.owner, square.card %>
+        <%= link_to "#{square.card.owner} (bricka #{square.card.id})", square.card %>
       <% end %>
     </li>
   <% end %>
@@ -21,9 +25,8 @@
 
 <% else %>
 
-  <h4>Ingen har markerat detta påstående som uppfyllt än.</h4>
+  <p>Ingen har markerat detta påstående som uppfyllt än.</p>
 
 <% end %>
 
-<%= link_to 'Ändra', edit_claim_path(@claim) %> |
-<%= link_to 'Tillbaka', claims_path %>
+&larr; <%= link_to 'Tillbaka', claims_path %> eller <%= link_to 'Ändra', edit_claim_path(@claim) %>

@@ -14,7 +14,7 @@
   <tr>
     <td><%= link_to "Bingobricka #{card.id}", card %></td>
     <td><%=h card.owner %></td>
-    <td class="used_column"><%=h card.used_squares.length %> av 9</td>
+    <td class="used_column"><%=h card.used_squares.length %> av <%=h card.squares.length %></td>
 <!--    <td class="show_column"><%= link_to 'Visa', card %></td>-->
     <td class="edit_column"><%= link_to 'Ändra', edit_card_path(card) %></td>
     <td class="delete_column"><%= link_to 'Ta bort', card, :confirm => 'Are you sure?', :method => :delete %></td>
