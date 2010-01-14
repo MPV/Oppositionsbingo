@@ -21,7 +21,11 @@
   <% end %>
   
     <a href="/squares/<%= @card.squares[i].id %>/daub">
-      <%= @card.squares[i].claim.name %>
+      <% if @card.squares[i].claim.nil? %>
+        <strong>Fel!</strong> <br/> Påstående saknas.
+      <% else %>
+        <%= @card.squares[i].claim.name %>
+      <% end %>
     </a>
     
   </td>

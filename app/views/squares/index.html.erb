@@ -4,13 +4,25 @@
   <tr>
     <th>Bingobricka</th>
     <th>Påstående</th>
-    <th>Uppfyllt?</th>
+    <th class="used_column">Har hänt?</th>
   </tr>
 
 <% @squares.each do |square| %>
   <tr>
-    <td><%= link_to h(square.card.owner), square.card %></td>
-    <td><%= link_to square.claim.name, square.claim %></td>
+    <td>
+    <% if square.card.nil? %>
+      Ingen bricka.
+    <% else %>
+      <%= link_to h(square.card.owner), square.card %>
+    <% end %>
+    </td>
+    <td>
+    <% if square.claim.nil? %>
+      Inget påstående.
+    <% else %>
+      <%= link_to square.claim.name, square.claim %>
+    <% end %>
+    </td>
     <td>
       <% if square.used == true %>
         Ja
@@ -18,9 +30,9 @@
         Nej
       <% end %>
     </td>
-    <td><%= link_to 'Visa', square %></td>
-    <td><%= link_to 'Ändra', edit_square_path(square) %></td>
-    <td><%= link_to 'Ta bort', square, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="show_column"><%= link_to 'Visa', square %></td>
+    <td class="edit_column"><%= link_to 'Ändra', edit_square_path(square) %></td>
+    <td class="delete_column"><%= link_to 'Ta bort', square, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

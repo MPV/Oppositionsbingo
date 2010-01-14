@@ -10,7 +10,11 @@
   <ul>
   <% for square in @claim.used_squares %>
     <li>
-      <%= link_to square.card.owner, square.card %>
+      <% if square.card.nil? %>
+        Bingobrickan saknas.
+      <% else %>
+        <%= link_to square.card.owner, square.card %>
+      <% end %>
     </li>
   <% end %>
   </ul>
