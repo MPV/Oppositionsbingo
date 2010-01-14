@@ -1,9 +1,12 @@
-<h1>Alla bingobrickor</h1>
+<h1>Alla bingobrickor <span class="index_row_count"><%= @cards.length %>st</span></h1>
 
-<table id="cards_table">
+<table id="cards_table" class="index_table">
   <tr>
     <th>Ägare</th>
     <th>Klara rutor</th>
+    <th class="show_column"></th>
+    <th class="edit_column"></th>
+    <th class="delete_column"></th>
   </tr>
 
 <% @cards.each do |card| %>

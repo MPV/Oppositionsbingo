@@ -1,14 +1,17 @@
-<h1>Alla påståenden</h1>
+<h1>Alla påståenden <span class="index_row_count"><%= @claims.length %>st</span></h1>
 
-<table id="claims_table">
+<table id="claims_table" class="index_table">
   <tr>
-    <th>Påstående</th>
-    <th>Hänt enligt</th>
+    <th class="claim_column">Påstående</th>
+    <th class="used_column">Hänt enligt</th>
+    <th class="show_column"></th>
+    <th class="edit_column"></th>
+    <th class="delete_column"></th>
   </tr>
 
 <% @claims.each do |claim| %>
   <tr>
-    <td><%=h claim.name %></td>
+    <td class="claim_column"><%=h claim.name %></td>
     <td class="used_column"><%=h claim.used_squares.length %> st</td>
     <td class="show_column"><%= link_to 'Visa', claim %></td>
     <td class="edit_column"><%= link_to 'Ändra', edit_claim_path(claim) %></td>

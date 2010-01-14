@@ -1,10 +1,13 @@
-<h1>Alla rutor</h1>
+<h1>Alla rutor <span class="index_row_count"><%= @squares.length %>st</span></h1>
 
-<table>
+<table id="squares_table" class="index_table">
   <tr>
     <th>Bingobricka</th>
     <th>Påstående</th>
     <th class="used_column">Har hänt?</th>
+    <th class="show_column"></th>
+    <th class="edit_column"></th>
+    <th class="delete_column"></th>
   </tr>
 
 <% @squares.each do |square| %>
