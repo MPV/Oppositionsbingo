@@ -9,10 +9,10 @@
 <% @cards.each do |card| %>
   <tr>
     <td><%=h card.owner %></td>
-    <td><%=h card.used_squares.length %> av 9</td>
-    <td><%= link_to 'Visa', card %></td>
-    <td><%= link_to 'Ändra', edit_card_path(card) %></td>
-    <td><%= link_to 'Ta bort', card, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="used_column"><%=h card.used_squares.length %> av 9</td>
+    <td class="show_column"><%= link_to 'Visa', card %></td>
+    <td class="edit_column"><%= link_to 'Ändra', edit_card_path(card) %></td>
+    <td class="delete_column"><%= link_to 'Ta bort', card, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

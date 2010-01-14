@@ -9,7 +9,7 @@ html, body{
 
 th{
     text-align: left;
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 td{
@@ -85,6 +85,22 @@ table.card_squares_table td a{
 }
 table.card_squares_table td a:hover{
     background: #e3e3e3 !important;
+}
+
+.show_column{
+    width: 2.5em;
+}
+
+.edit_column{
+    width: 3em;
+}
+
+.delete_column{
+    width: 3.5em;
+}
+
+.used_column{
+    width: 3.5em;
 }
 
 #new_card_button{
