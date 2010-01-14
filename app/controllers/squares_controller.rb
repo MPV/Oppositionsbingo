@@ -2,7 +2,7 @@ class SquaresController < ApplicationController
   # GET /squares
   # GET /squares.xml
   def index
-    @squares = Square.all
+    @squares = Square.find(:all, :order => :id)
 
     respond_to do |format|
       format.html # index.html.erb

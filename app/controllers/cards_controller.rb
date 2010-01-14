@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.xml
   def index
-    @cards = Card.all
+    @cards = Card.find(:all, :order => :id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -94,12 +94,6 @@ class CardsController < ApplicationController
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
-    
-    squares = Square.find(:all, :conditions => { :card_id => params[:id] })
-    
-    for square in squares
-      square.destroy
-    end
 
     respond_to do |format|
       format.html { redirect_to(cards_url) }

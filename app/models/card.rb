@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  has_many :squares, :order => "position ASC"
+  has_many :squares, :order => "position ASC", :dependent => :destroy
   has_many :claims, :through => :squares
   
   def used_squares

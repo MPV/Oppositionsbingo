@@ -2,7 +2,7 @@ class ClaimsController < ApplicationController
   # GET /claims
   # GET /claims.xml
   def index
-    @claims = Claim.all
+    @claims = Claim.find(:all, :order => :id)
 
     respond_to do |format|
       format.html # index.html.erb
