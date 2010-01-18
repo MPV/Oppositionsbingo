@@ -15,7 +15,7 @@
     <td class="used_column"><%=h claim.used_squares.length %> st</td>
     <td class="show_column"><%= link_to 'Visa', claim %></td>
     <td class="edit_column"><%= link_to 'Ändra', edit_claim_path(claim) %></td>
-    <td class="delete_column"><%= link_to 'Ta bort', claim, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="delete_column"><%= link_to 'X', claim, :confirm => 'Är du säker? Det finns ingen ångra-knapp. ', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

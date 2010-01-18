@@ -35,7 +35,7 @@
     </td>
     <td class="show_column"><%= link_to 'Visa', square %></td>
     <td class="edit_column"><%= link_to 'Ändra', edit_square_path(square) %></td>
-    <td class="delete_column"><%= link_to 'Ta bort', square, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="delete_column"><%= link_to 'X', square, :confirm => 'Är du säker? Det finns ingen ångra-knapp. ', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

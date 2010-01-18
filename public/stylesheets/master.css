@@ -157,6 +157,7 @@ table.card_squares_table td.used a:hover{
 
 .index_table{
     border-spacing: 0;
+    width: 100%;
 }
 
 .index_table th{
@@ -168,9 +169,18 @@ table.card_squares_table td.used a:hover{
     line-height: 1.5em;
 }
 
+.index_table tr:hover td{
+    background: #ddd;
+}
+
+.index_table tr:hover td a{
+    color: blue;
+    text-decoration: underline;
+}
+
 .show_column{
     text-align: right;
-    width: 2.5em;
+    width: 2em;
 }
 
 .edit_column{
@@ -179,12 +189,12 @@ table.card_squares_table td.used a:hover{
 }
 
 .delete_column{
-    text-align: right;
-    width: 3.5em;
+    text-align: center;
+    width: 1.5em;
 }
 
 .show_column a, .edit_column a, .delete_column a{
-    color: #ccc;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -194,7 +204,7 @@ table.card_squares_table td.used a:hover{
 }
 
 .used_column{
-    width: 3.5em;
+    width: 2em;
 }
 
 #claims_table td.claim_column{
