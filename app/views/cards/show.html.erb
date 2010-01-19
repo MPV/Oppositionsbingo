@@ -1,6 +1,6 @@
 <h1>Bingobricka nr <%= @card.id %></h1>
 <p>
-  Brickan skapades av <%=h @card.owner %>.
+  Brickan skapades av <%=h @card.owner %> och har <%= @card.points %> bingos.
 </p>
 
 <%
@@ -8,6 +8,7 @@
 %>
 
 <table class="card_squares_table">
+
 <% for i in 0..num_squares do %>
   
   <% if i % 3 == 0 %>
@@ -35,6 +36,7 @@
   <% end %>
   
 <% end %>
+
 </table>
 
 &larr; <%= link_to 'Tillbaka', cards_path %> eller <%= link_to 'Ändra', edit_card_path(@card) %>
