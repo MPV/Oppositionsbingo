@@ -77,6 +77,11 @@ table.card_squares_table.columns_4 td{
     width: 22%;
 }
 
+table.card_squares_table.columns_5 td{
+    height: 17%;
+    width: 17%;
+}
+
 table.card_squares_table td a{
     display: block;
     height: 100%;
