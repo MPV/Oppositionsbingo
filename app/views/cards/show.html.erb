@@ -4,15 +4,18 @@
 </p>
 
 <%
-  num_squares = @card.squares.length - 1
+  #num_squares = @card.squares.length - 1
+  
+  row = 1
+  colum = 1
 %>
 
-<table class="card_squares_table">
+<table class="card_squares_table columns_<%= @card.sqrt_of_n.to_i %>">
 
-<% for i in 0..num_squares do %>
+<% for i in 0..(@card.squares.length - 1) do %>
   
-  <% if i % 3 == 0 %>
-    <tr>
+  <% if i % @card.sqrt_of_n == 0 %>
+    <tr class="card_square_row" id="card_square_row<%= row %>">
   <% end %>
   
   <% if @card.squares[i].used == true %>
@@ -31,8 +34,11 @@
     
   </td>
   
-  <% if i % 3 == 2 %>
+  <% if i % @card.sqrt_of_n == @card.sqrt_of_n-1 %>
     </tr>
+    <% 
+      row = row + 1
+    %>
   <% end %>
   
 <% end %>

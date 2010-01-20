@@ -57,7 +57,7 @@ table.card_squares_table{
     font-size: 80%;
     height: 30em;
     margin: 2em auto;
-    width: 75%;
+    width: 100%;
 }
 table.card_squares_table td{
     background: #e3e3e3;
@@ -65,7 +65,16 @@ table.card_squares_table td{
     height: 33%;
     padding: 0;
     text-align: center;
+}
+
+table.card_squares_table.columns_3 td{
+    height: 33%;
     width: 33%;
+}
+
+table.card_squares_table.columns_4 td{
+    height: 25%;
+    width: 25%;
 }
 
 table.card_squares_table td a{
@@ -74,10 +83,10 @@ table.card_squares_table td a{
     cursor: pointer;
     display: block;
     height: 100%;
-    padding: 1em;
+    padding: 5%;
     text-align: center;
     text-decoration: none;
-    /*width: 7em;*/
+    width: 85%;
 }
 
 table.card_squares_table td a:hover{

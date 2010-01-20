@@ -10,7 +10,13 @@ class Card < ActiveRecord::Base
     some_squares
   end
   
-  
+  def sqrt_of_n
+    if self.squares.nil?
+      0
+    else
+      Math.sqrt(self.squares.length)
+    end
+  end
   
   def count_bingos
     
@@ -23,7 +29,7 @@ class Card < ActiveRecord::Base
     else
     
       n = self.squares.length
-      sqrt_of_n = Math.sqrt(n)
+      sqrt_of_n = self.sqrt_of_n #Math.sqrt(n)
     
       # Check diagonal 1 (top left to lower right):
       
