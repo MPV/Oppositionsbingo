@@ -18,19 +18,22 @@
     <tr class="card_square_row" id="card_square_row<%= row %>">
   <% end %>
   
-  <% if @card.squares[i].used == true %>
-  <td class="square used" id="square_<%= @card.squares[i].id %>">
-  <% else %>
-  <td class="square" id="square_<%= @card.squares[i].id %>">
-  <% end %>
+  <% 
+    square_css_classes = 'square'
   
-    <a href="/squares/<%= @card.squares[i].id %>/daub">
+    if @card.squares[i].used == true
+      square_css_classes += ' used'
+    end
+  %>
+  <td class="<%= square_css_classes %>" id="square_<%= @card.squares[i].id %>" onclick="location.replace('/squares/<%= @card.squares[i].id %>/daub'); return(0);">
+  
+    <!--<a href="/squares/<%= @card.squares[i].id %>/daub">-->
       <% if @card.squares[i].claim.nil? %>
         <strong>Fel!</strong> <br/> Påstående saknas.
       <% else %>
-        <%= @card.squares[i].claim.name %>
+        <span><%= @card.squares[i].claim.name %></span>
       <% end %>
-    </a>
+    <!--</a>-->
     
   </td>
   
