@@ -173,9 +173,9 @@ table.card_squares_table td.used a:hover{
     background: #ddd;
 }
 
-.index_table tr:hover td a{
-    color: blue;
-    text-decoration: underline;
+.index_table tr:hover td.show_column a, .index_table tr:hover td.edit_column a, .index_table tr:hover td.delete_column a{
+    color: #aaa;
+    /*text-decoration: underline;*/
 }
 
 .show_column{
@@ -194,16 +194,22 @@ table.card_squares_table td.used a:hover{
 }
 
 .show_column a, .edit_column a, .delete_column a{
-    color: #fff;
+    color: #ccc;
+    display: block;
+    font-weight: bold;
     text-decoration: none;
 }
 
 .show_column a:hover, .edit_column a:hover, .delete_column a:hover{
-    color: #999;
-    text-decoration: underline;
+    color: #666 !important;
 }
 
 .used_column{
+    width: 2em;
+}
+
+.points_column{
+    text-align: right;
     width: 2em;
 }
 

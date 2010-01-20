@@ -14,6 +14,8 @@ class Card < ActiveRecord::Base
   
   def count_bingos
     
+    num_bingos = 0
+    
     if self.squares.length.nil?
       
       # Card has no squares. No reason to count.
@@ -22,7 +24,6 @@ class Card < ActiveRecord::Base
     
       n = self.squares.length
       sqrt_of_n = Math.sqrt(n)
-      num_bingos = 0
     
       # Check diagonal 1 (top left to lower right):
       
@@ -117,14 +118,14 @@ class Card < ActiveRecord::Base
         i += 1
         
       end
-      
-      # Store the amount of bingos:
-      self.points = num_bingos
-    
-      # Save the changes:
-      self.save!
     
     end
+    
+    # Store the amount of bingos:
+    self.points = num_bingos
+  
+    # Save the changes:
+    self.save!
     
   end
   
