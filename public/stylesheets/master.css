@@ -205,7 +205,8 @@ table.card_squares_table td.used a:hover{
 }
 
 .used_column{
-    width: 2em;
+    text-align: right;
+    width: 3.5em;
 }
 
 .used_percent_column{
