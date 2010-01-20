@@ -4,6 +4,7 @@
   <tr>
     <th class="claim_column">Påstående</th>
     <th class="used_column">Hänt enligt</th>
+    <th class="used_percent_column">%</th>
     <th class="show_column"></th>
     <th class="edit_column"></th>
     <th class="delete_column"></th>
@@ -11,11 +12,24 @@
 
 <% @claims.each do |claim| %>
   <tr>
-    <td class="claim_column"><%=h claim.name %></td>
-    <td class="used_column"><%=h claim.used_squares.length %> st</td>
-    <td class="show_column"><%= link_to 'Visa', claim %></td>
-    <td class="edit_column"><%= link_to 'Ändra', edit_claim_path(claim) %></td>
-    <td class="delete_column"><%= link_to 'X', claim, :confirm => 'Är du säker? Det finns ingen ångra-knapp. ', :method => :delete %></td>
+    <td class="claim_column">
+      <%=h claim.name %>
+    </td>
+    <td class="used_column">
+      <%=h claim.used_squares.length %> av <%=h claim.squares.length %>
+    </td>
+    <td class="used_percent_column">
+      <%= "%.f\%" % (claim.percent_used * 100) %>
+    </td>
+    <td class="show_column">
+      <%= link_to 'Visa', claim %>
+    </td>
+    <td class="edit_column">
+      <%= link_to 'Ändra', edit_claim_path(claim) %>
+    </td>
+    <td class="delete_column">
+      <%= link_to 'X', claim, :confirm => 'Är du säker? Det finns ingen ångra-knapp. ', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

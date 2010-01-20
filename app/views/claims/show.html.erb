@@ -29,4 +29,26 @@
 
 <% end %>
 
+<% if @claim.squares.length > 0 %>
+  
+  <h4>Påståendet finns på dessa brickor:</h4>
+  
+  <ul>
+  <% for square in @claim.squares %>
+    <li>
+      <% if square.card.nil? %>
+        Bingobrickan saknas.
+      <% else %>
+        <%= link_to "#{square.card.owner} (bricka #{square.card.id})", square.card %>
+      <% end %>
+    </li>
+  <% end %>
+  </ul>
+
+<% else %>
+
+  <p>Detta påstående finns inte på någon bingobricka ännu.</p>
+
+<% end %>
+
 &larr; <%= link_to 'Tillbaka', claims_path %> eller <%= link_to 'Ändra', edit_claim_path(@claim) %>

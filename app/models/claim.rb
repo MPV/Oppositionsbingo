@@ -9,4 +9,8 @@ class Claim < ActiveRecord::Base
     some_squares
   end
   
+  def percent_used
+    (used_squares.length.to_f / squares.length.to_f).to_f
+  end
+  
 end
