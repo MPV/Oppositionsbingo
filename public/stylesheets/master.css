@@ -212,6 +212,7 @@ table.card_squares_table td.used a:hover{
 }
 
 .delete_column{
+    font-weight: bold;
     text-align: center;
     width: 1.5em;
 }
@@ -219,17 +220,16 @@ table.card_squares_table td.used a:hover{
 .show_column a, .edit_column a, .delete_column a{
     color: #ccc;
     display: block;
-    font-weight: bold;
     text-decoration: none;
 }
 
 .show_column a:hover, .edit_column a:hover, .delete_column a:hover{
-    color: #666 !important;
+    color: red !important;
 }
 
 .used_column{
     text-align: right;
-    width: 3.5em;
+    width: 5.5em;
 }
 
 .used_percent_column{
@@ -239,7 +239,15 @@ table.card_squares_table td.used a:hover{
 
 .points_column{
     text-align: right;
-    width: 2em;
+    width: 4em;
+}
+
+.used_column .totals{
+    color: #ccc;
+}
+
+.points_column .totals{
+    color: #ccc;
 }
 
 #claims_table td.claim_column{

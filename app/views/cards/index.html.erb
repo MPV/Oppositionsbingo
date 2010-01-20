@@ -4,7 +4,7 @@
   <tr>
     <th>Bricka</th>
     <th>Skapades av</th>
-    <th>Klara rutor</th>
+    <th class="used_column">Klara rutor</th>
     <th class="points_column">Bingos</th>
 <!--    <th class="show_column"></th>-->
     <th class="edit_column"></th>
@@ -15,8 +15,8 @@
   <tr>
     <td><%= link_to "Bingobricka #{card.id}", card %></td>
     <td><%=h card.owner %></td>
-    <td class="used_column"><%=h card.used_squares.length %> av <%=h card.squares.length %></td>
-    <td class="points_column"><%= card.points %> av 8</td>
+    <td class="used_column"><%=h card.used_squares.length %><span class="totals">  av <%=h card.squares.length %></span></td>
+    <td class="points_column"><%= card.points %><span class="totals"> av 8</span></td>
 <!--    <td class="show_column"><%= link_to 'Visa', card %></td>-->
     <td class="edit_column"><%= link_to 'Ändra', edit_card_path(card) %></td>
     <td class="delete_column"><%= link_to 'X', card, :confirm => 'Är du säker? Det finns ingen ångra-knapp.', :method => :delete %></td>
