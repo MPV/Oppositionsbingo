@@ -1,20 +1,27 @@
-<p>
-  <b>Card:</b>
-  <%=h @square.card_id %>
-</p>
+<h1>Ruta <%= @square.id %></h1>
 
 <p>
-  <b>Claim:</b>
-  <%=h @square.claim_id %>
-</p>
-
-<p>
-  <b>Used:</b>
-  <% if @square.used == true %>
-    Yes
-  <% else %>
-    No
+  Hör till bingobricka:<br/>
+  <% unless @square.card.nil? %>
+    <%= link_to "#{@square.card.owner} (bricka #{@square.card_id})", @square.card %>
   <% end %>
+</p>
+
+<p>
+  Och på rutan står detta påstående:<br/>
+  <% unless @square.claim.nil? %>
+  <%= link_to "#{@square.claim.name}", @square.claim %>
+  <% end %>
+</p>
+
+<p>
+  Rutan
+  <% if @square.used == true %>
+    <strong>är</strong>
+  <% else %>
+    <strong>är inte</strong>
+  <% end %>
+  markerad som använd.
 </p>
 
 &larr; <%= link_to 'Tillbaka', squares_path %> eller <%= link_to 'Ändra', edit_square_path(@square) %>
