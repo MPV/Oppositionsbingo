@@ -14,6 +14,7 @@ class RoundsController < ApplicationController
   # GET /rounds/1.xml
   def show
     @round = Round.find(params[:id])
+    @card = Card.new
 
     respond_to do |format|
       format.html # show.html.erb

@@ -10,8 +10,8 @@
 <% @rounds.each do |round| %>
   <tr>
     <td><%= link_to h(round.name), round %></td>
-    <td><%= link_to 'Ändra', edit_round_path(round) %></td>
-    <td><%= link_to 'X', round, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="edit_column"><%= link_to 'Ändra', edit_round_path(round) %></td>
+    <td class="delete_column"><%= link_to 'X', round, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

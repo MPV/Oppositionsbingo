@@ -9,11 +9,8 @@
   <h2>Skaffa en bingobricka</h2>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :owner, 'Vad heter du?' %>
-    <%= f.text_field :owner %>
-    <%= f.submit 'Ge mig en bingobricka &rarr;' %>
-  </p>
+  <%= render :partial => 'cards/form', :locals => { :f => f } %>
+  
 <% end %>
 <script type="text/javascript" charset="utf-8">
   document.forms[0].card_owner.focus();

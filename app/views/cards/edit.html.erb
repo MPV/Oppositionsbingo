@@ -2,7 +2,9 @@
 
 <% form_for(@card) do |f| %>
   <%= f.error_messages %>
-
+  
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  
   <p>
     <%= f.label :owner, 'Namn' %><br />
     <%= f.text_field :owner %>

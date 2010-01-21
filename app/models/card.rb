@@ -2,6 +2,7 @@ class Card < ActiveRecord::Base
   
   has_many :squares, :order => "position ASC", :dependent => :destroy
   has_many :claims, :through => :squares
+  belongs_to :round
   
   validates_presence_of :owner
   
@@ -16,6 +17,12 @@ class Card < ActiveRecord::Base
     else
       Math.sqrt(self.squares.length)
     end
+  end
+  
+  def max_bingos
+    
+    (sqrt_of_n * 2 + 2 ).to_i
+    
   end
   
   def count_bingos

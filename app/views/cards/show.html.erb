@@ -1,6 +1,10 @@
 <h1>Bingobricka nr <%= @card.id %></h1>
 <p>
-  Brickan skapades av <%=h @card.owner %> och har <%= @card.points %> bingos.
+  Brickan skapades av <%=h @card.owner %><%-
+   unless @card.round.nil? 
+  -%>, hör till omgången <%= link_to h(@card.round.name), @card.round %>
+  <% end %>
+  och har <%= @card.points %> bingos.
 </p>
 
 <%

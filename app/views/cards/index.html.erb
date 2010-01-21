@@ -1,29 +1,7 @@
 <h1>Alla bingobrickor <span class="index_row_count"><%= @cards.length %>st</span></h1>
 
-<table id="cards_table" class="index_table">
-  <tr>
-    <th>Bricka</th>
-    <th>Skapades av</th>
-    <th class="used_column">Klara rutor</th>
-    <th class="points_column">Bingos</th>
-<!--    <th class="show_column"></th>-->
-    <th class="edit_column"></th>
-    <th class="delete_column"></th>
-  </tr>
-
-<% @cards.each do |card| %>
-  <tr>
-    <td><%= link_to "Bingobricka #{card.id}", card %></td>
-    <td><%=h card.owner %></td>
-    <td class="used_column"><%=h card.used_squares.length %><span class="totals">  av <%=h card.squares.length %></span></td>
-    <td class="points_column"><%= card.points %><span class="totals"> av 8</span></td>
-<!--    <td class="show_column"><%= link_to 'Visa', card %></td>-->
-    <td class="edit_column"><%= link_to 'Ändra', edit_card_path(card) %></td>
-    <td class="delete_column"><%= link_to 'X', card, :confirm => 'Är du säker? Det finns ingen ångra-knapp.', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => 'table', :locals => { :cards => @cards } %>
 
 <br />
 
-<%= link_to 'Ny bingobricka', new_card_path %>
+<%= link_to 'Ny bingobricka', new_card_path, { :class => 'button new' } %>
