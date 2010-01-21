@@ -57,6 +57,9 @@ class ClaimsController < ApplicationController
   # PUT /claims/1
   # PUT /claims/1.xml
   def update
+    
+    params[:claim][:tag_ids] ||= []
+    
     @claim = Claim.find(params[:id])
 
     respond_to do |format|

@@ -1,6 +1,7 @@
 class Claim < ActiveRecord::Base
   has_many :squares
   has_many :cards, :through => :squares
+  has_and_belongs_to_many :tags
   
   validates_presence_of :name
   

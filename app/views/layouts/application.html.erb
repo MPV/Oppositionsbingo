@@ -25,6 +25,11 @@
     <p style="color: green"><%= flash[:notice] %></p>
     <%= yield %>
   </div>
+  <div id="footer">
+    Beta-funktioner:
+    <%= link_to 'Omgångar', '/rounds' %></li> och
+    <%= link_to 'Taggar', '/tags' %></li>
+  </div>
 </div>
 
 <script type="text/javascript">

@@ -38,6 +38,21 @@ a:hover{
     padding: 0.5em 2em 2em 2em;
 }
 
+#footer{
+    color: #999;
+    font-size: 80%;
+    padding: 1%;
+    text-align: center;
+}
+
+#footer a{
+    color: #999;
+}
+
+#footer a:hover{
+    color: #666;
+}
+
 #menu{
     height: 2em;
     margin: 0;
@@ -61,10 +76,15 @@ table.card_squares_table{
 }
 table.card_squares_table td{
     background: #e3e3e3;
+    border: 0.5em solid #e3e3e3;
     cursor: pointer;
     padding: 3%;
     text-align: center;
     vertical-align: middle;
+}
+
+table.card_squares_table td:hover{
+    border-color: #999;
 }
 
 table.card_squares_table.columns_3 td{
@@ -111,7 +131,12 @@ table.card_squares_table td a:hover{
 
 table.card_squares_table td.used{
     background: lightgreen;
+    border-color: lightgreen;
     color: green;
+}
+
+table.card_squares_table td.used:hover{
+    border-color: #999;
 }
 
 table.card_squares_table td.used a{
@@ -269,6 +294,24 @@ table.card_squares_table td.used a:hover{
 #versions_table .date{
     color: #888;
     width: 9.5em;
+}
+
+a.button{
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5em 0.8em;
+    text-decoration: none;
+}
+
+a.button:hover{
+    color: #000 !important;
+}
+
+a.button.new{
+    background: lightgreen;
+    color: green;
 }
 
 #rules_list{

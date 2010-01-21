@@ -1,0 +1,21 @@
+<h1>Alla omgångar</h1>
+
+<table class="index_table">
+  <tr>
+    <th>Namn</th>
+    <th class="edit_column"></th>
+    <th class="delete_column"></th>
+  </tr>
+
+<% @rounds.each do |round| %>
+  <tr>
+    <td><%= link_to h(round.name), round %></td>
+    <td><%= link_to 'Ändra', edit_round_path(round) %></td>
+    <td><%= link_to 'X', round, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Ny omgång', new_round_path, { :class => 'new button' } %>

@@ -7,9 +7,17 @@
     <%= f.label :name, 'Själva påståendet' %><br />
     <%= f.text_field :name %>
   </p>
+  
+  <ul class="checkbox-list">
+    <% for tag in Tag.all -%>
+      <li><%= check_box_tag "claim[tag_ids][]", tag.id, @claim.tags.include?(tag) -%> <%= tag.name -%></li>
+    <% end -%>
+  </ul>
+  
   <p>
     <%= f.submit 'Uppdatera' %>
   </p>
+  
 <% end %>
 
 &larr; <%= link_to 'Tillbaka', claims_path %> eller <%= link_to 'Visa', @claim %>
