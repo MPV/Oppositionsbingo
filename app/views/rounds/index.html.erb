@@ -1,4 +1,4 @@
-<h1>Alla omgångar</h1>
+<h1>Alla omgångar <span class="index_row_count"><%= @rounds.length %>st</span></h1>
 
 <table class="index_table">
   <tr>
@@ -18,4 +18,4 @@
 
 <br />
 
-<%= link_to 'Ny omgång', new_round_path, { :class => 'new button' } %>
+<%= link_to '+ Ny omgång', new_round_path, { :class => 'new button' } %>

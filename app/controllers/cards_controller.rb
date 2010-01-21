@@ -27,6 +27,10 @@ class CardsController < ApplicationController
   def new
     @card = Card.new
 
+    unless params[:round_id].nil?
+      @card.round_id = params[:round_id]
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @card }

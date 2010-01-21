@@ -1,4 +1,4 @@
-<h1>Alla taggar</h1>
+<h1>Alla taggar <span class="index_row_count"><%= @tags.length %>st</span></h1>
 
 <table class="index_table">
   <tr>
@@ -18,4 +18,4 @@
 
 <br />
 
-<%= link_to 'Ny tagg', new_tag_path %>
+<%= link_to '+ Ny tagg', new_tag_path, { :class => 'button new' } %>

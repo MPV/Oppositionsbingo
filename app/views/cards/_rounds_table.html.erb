@@ -1,0 +1,36 @@
+<table id="cards_table" class="index_table">
+  <tr>
+    <th>Bricka</th>
+    <th>Skapades av</th>
+    <th class="used_column">Klara rutor</th>
+    <th class="points_column">Bingos</th>
+    <th class="edit_column"></th>
+    <th class="delete_column"></th>
+  </tr>
+
+<% cards.each do |card| %>
+  <tr>
+    <td>
+      <%= link_to "Bingobricka #{card.id}", round_card_path(card.round.id, card) %>
+    </td>
+    <td>
+      <%=h card.owner %>
+    </td>
+    <td class="used_column">
+      <% if card.used_squares.length == card.squares.length %>
+        Alla
+      <% end %>
+      <%=h card.used_squares.length %><span class="totals">  av <%=h card.squares.length %></span>
+    </td>
+    <td class="points_column">
+      <%= card.points %><span class="totals"> av <%= card.max_bingos %></span>
+    </td>
+    <td class="edit_column">
+      <%= link_to 'Ändra', edit_round_card_path(card.round.id, card) %>
+    </td>
+    <td class="delete_column">
+      <%= link_to 'X', round_card_path(card.round.id, card), :confirm => 'Är du säker? Det finns ingen ångra-knapp.', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>

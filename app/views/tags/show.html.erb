@@ -1,10 +1,10 @@
 <h1><%=h @tag.name %></h1>
 
 <% if @tag.claims.length == 0 %>
-  <p>Inget taggat som <%=h @tag.name %> ännu.</p>
+  <p>Inga påståenden har taggats som <%=h @tag.name %> ännu.</p>
 <% else %>
 
-  <h3>Taggat som <%=h @tag.name %>:</h3>
+  <h3>Påståenden med denna tagg:</h3>
   <ul>
   <% for claim in @tag.claims %>
     <li><%= link_to h(claim.name), claim %></li>
@@ -13,5 +13,7 @@
 
 <% end %>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+&larr;
+<%= link_to 'Tillbaka', tags_path %>
+eller
+<%= link_to 'Ändra', edit_tag_path(@tag) %>

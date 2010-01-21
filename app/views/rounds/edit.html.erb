@@ -2,15 +2,16 @@
 
 <% form_for(@round) do |f| %>
   <%= f.error_messages %>
-
+  
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.submit 'Uppdatera' %>
   </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  
 <% end %>
 
-<%= link_to 'Show', @round %> |
-<%= link_to 'Back', rounds_path %>
+&larr;
+<%= link_to 'Tillbaka', rounds_path %>
+eller
+<%= link_to 'Visa', @round %>

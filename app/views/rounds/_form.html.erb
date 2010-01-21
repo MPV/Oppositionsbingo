@@ -1,0 +1,15 @@
+<p>
+  <%= f.label :name, 'Namn på omgången:' %><br />
+  <%= f.text_field :name %>
+</p>
+
+<p>Taggar:</p>
+<ul class="checkbox-list">
+  <% for tag in Tag.all(:order => :name) -%>
+    <li><%= check_box_tag "round[tag_ids][]", tag.id, @round.tags.include?(tag) -%> <%= tag.name -%></li>
+  <% end -%>
+</ul>
+
+<p class="description">
+  Omgångens bingobrickor kan bara få påståenden från de taggar du valt.
+</p>

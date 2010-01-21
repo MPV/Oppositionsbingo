@@ -1,27 +1,27 @@
 <h1><%=h @round.name %></h1>
 
+<h2>Påståenden från:</h2>
+<% if @round.tags.length == 0 %>
+  <p>Inga taggar.</p>
+<% else %>
+  <ul>
+  <% for tag in @round.tags %>
+    <li><%= link_to tag.name, tag %> (<%= tag.claims.length %> påstående<%- if tag.claims.length != 1 -%>n<%- end -%>)</li>
+  <% end %>
+  </ul>
+<% end %>
+
+<h2>Bingobrickorna:</h2>
 <% if @round.cards.length == 0 %>
   <p>Inga bingobrickor i denna omgången.</p>
 <% else %>
-  <p>Innehåller dessa bingobrickor:</p>
-  <%= render :partial => '/cards/table', :locals => { :cards => @round.cards } %>
+  <%= render :partial => '/cards/rounds_table', :locals => { :cards => @round.cards } %>
 <% end %>
 
+<p><%= link_to '+ Ny bingobricka', {:controller => :cards, :action => :new, :round_id => @round.id}, { :class => 'button new' } %></p>
 
-<% form_for(@card) do |f| %>
-  <h3>Skapa nytt kort för denna omgången:</h3>
-  <%= f.error_messages %>
-  
-  <%= f.hidden_field :round_id, { :value => @round.id } %>
-  
-  <p>
-    <%= f.label :owner, 'Vad heter du?' %><br/>
-    <%= f.text_field :owner %>
-  </p>
-  <p>
-    <%= f.submit 'Ge mig en bingobricka &rarr;' %>
-  </p>
-<% end %>
 
+<p>
 &larr; <%= link_to 'Tillbaka', rounds_path %> eller
 <%= link_to 'Ändra', edit_round_path(@round) %>
+</p>

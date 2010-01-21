@@ -8,11 +8,19 @@
     <%= f.text_field :name %>
   </p>
   
+  <label>Taggat:</label>
+  
+  <p>
   <ul class="checkbox-list">
-    <% for tag in Tag.all -%>
+    <% for tag in Tag.all(:order => :name) -%>
       <li><%= check_box_tag "claim[tag_ids][]", tag.id, @claim.tags.include?(tag) -%> <%= tag.name -%></li>
     <% end -%>
   </ul>
+  </p>
+  
+  <p class="description">
+    Tagga ditt påstående med vad det handlar om. Då blir det lättare för någon annan att välja ditt påstående till en omgång. 
+  </p>
   
   <p>
     <%= f.submit 'Uppdatera' %>

@@ -58,6 +58,8 @@ class RoundsController < ApplicationController
   # PUT /rounds/1
   # PUT /rounds/1.xml
   def update
+    params[:round][:tag_ids] ||= []
+    
     @round = Round.find(params[:id])
 
     respond_to do |format|

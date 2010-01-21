@@ -5,23 +5,18 @@
 </p>
 
 <div id="welcome_new_card_form">
+
 <% form_for(@card) do |f| %>
   <h2>Skaffa en bingobricka</h2>
   <%= f.error_messages %>
-
   <%= render :partial => 'cards/form', :locals => { :f => f } %>
-  
+  <p>
+    <%= f.submit 'Ge mig en bingobricka! &rarr;' %>
+  </p>
 <% end %>
+
 <script type="text/javascript" charset="utf-8">
   document.forms[0].card_owner.focus();
 </script>
+
 </div>
-
-<h3>"Disclaimer"</h3>
-
-<p>
-  Den här produkten påbörjades idag (onsdagen 13:e januari) och har nyss lanserats. Ha lite tålamod och kom gärna med önskemål om nya funktioner.
-</p>
-<p>
-  Mvh Victor
-</p>

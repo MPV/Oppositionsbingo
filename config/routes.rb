@@ -1,9 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :rounds
 
+  map.resources :rounds, :has_many => :cards
+  
   map.resources :tags
-
-
   map.resources :cards
   map.resources :squares
   map.resources :claims

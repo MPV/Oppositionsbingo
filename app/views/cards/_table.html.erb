@@ -2,6 +2,7 @@
   <tr>
     <th>Bricka</th>
     <th>Skapades av</th>
+    <th>Med i omgång</th>
     <th class="used_column">Klara rutor</th>
     <th class="points_column">Bingos</th>
 <!--    <th class="show_column"></th>-->
@@ -12,7 +13,14 @@
 <% cards.each do |card| %>
   <tr>
     <td><%= link_to "Bingobricka #{card.id}", card %></td>
-    <td><%=h card.owner %></td>
+    <td><%= h card.owner %></td>
+    <td>
+      <% if card.round.nil? %>
+        Omgång saknas.
+      <% else %>
+        <%= link_to h(card.round.name), card.round %>
+      <% end %>
+    </td>
     <td class="used_column"><%=h card.used_squares.length %><span class="totals">  av <%=h card.squares.length %></span></td>
     <td class="points_column"><%= card.points %><span class="totals"> av <%= card.max_bingos %></span></td>
 <!--    <td class="show_column"><%= link_to 'Visa', card %></td>-->

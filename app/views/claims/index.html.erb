@@ -4,7 +4,7 @@
   <tr>
     <th class="claim_column">Påstående</th>
     <th class="used_column">Hänt enligt</th>
-    <th class="used_percent_column">%</th>
+<!--    <th class="used_percent_column">%</th>-->
     <th class="show_column"></th>
     <th class="edit_column"></th>
     <th class="delete_column"></th>
@@ -16,11 +16,13 @@
       <%=h claim.name %>
     </td>
     <td class="used_column">
-      <%=h claim.used_squares.length %> av <%=h claim.squares.length %>
+      <%= "%.f\%" % (claim.percent_used * 100) %><!--<%=h claim.used_squares.length %>--><span class="totals"> av <%=h claim.squares.length %></span>
     </td>
+    <!--
     <td class="used_percent_column">
       <%= "%.f\%" % (claim.percent_used * 100) %>
     </td>
+    -->
     <td class="show_column">
       <%= link_to 'Visa', claim %>
     </td>
@@ -36,4 +38,4 @@
 
 <br />
 
-<%= link_to 'Nytt påstående', new_claim_path %>
+<%= link_to '+ Nytt påstående', new_claim_path, { :class => 'button new' } %>

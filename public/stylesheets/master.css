@@ -23,6 +23,17 @@ a:hover{
     color: red;
 }
 
+form .description{
+    color: #999;
+    font-size: 90%;
+}
+
+form .checkbox-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 1em;
+}
+
 #content{
     margin: 0 auto;
     margin-top: 1em;
@@ -38,6 +49,7 @@ a:hover{
 #container{
     background: #fff;
     border: 1px solid #ccc;
+    overflow: auto;
     padding: 0.5em 2em 2em 2em;
 }
 
@@ -176,7 +188,8 @@ table.card_squares_table td.used a:hover{
     background: #lightgreen;
     color: #000;
     display: block;
-    margin: 2em auto;
+    margin: 2em auto 0 auto;
+    overflow: auto;
     padding: 0.5em 2em 1em 2em;
 }
 
@@ -302,20 +315,25 @@ table.card_squares_table td.used a:hover{
 a.button{
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
-    background: #ccc;
+    background: #eee;
+    border: 0.1em solid #ccc;
     color: #666;
+    float: right;
     display: inline-block;
     padding: 0.5em 0.8em;
     text-decoration: none;
 }
 
 a.button:hover{
+    background: #f3f3f3;
     color: #000 !important;
 }
 
 a.button.new{
+/*
     background: lightgreen;
     color: green;
+*/
 }
 
 #rules_list{
