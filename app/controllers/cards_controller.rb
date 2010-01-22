@@ -81,6 +81,7 @@ class CardsController < ApplicationController
       
       else
         
+        @card.destroy
         save_ok = false
         flash[:error] = 'Det fanns inte tillräckligt med påståenden inom den omgången för att skapa en bricka.'
       
