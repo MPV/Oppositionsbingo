@@ -6,7 +6,8 @@ class ClaimsController < ApplicationController
     if params[:tag_id].nil?
       @claims = Claim.find(:all, :order => :id)
     else
-      @claims = Claim.find(:all, :conditions => { :tag_id => params[:tag_id] }, :order => :id)
+      @claims = Claim.find(:all, :joins => :tags, :conditions => ["tags.id = ?", params[:tag_id] ], :order => :id)
+      #:tag_id => params[:tag_id] }
     end
       
     respond_to do |format|
