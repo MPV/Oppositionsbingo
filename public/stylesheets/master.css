@@ -34,6 +34,10 @@ form .checkbox-list{
     padding: 0 0 0 1em;
 }
 
+form label.checkbox_label{
+    cursor: pointer;
+}
+
 .flash{
     display: block;
     margin-top: 1em;

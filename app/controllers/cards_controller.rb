@@ -55,11 +55,35 @@ class CardsController < ApplicationController
     save_ok = @card.save
     
     if save_ok
-    
-      claims = Claim.find(:all, :order => 'random()')
-    
-      for i in 0..8 do
-        @card.squares.create :claim_id => claims[i].id, :position => i
+      
+      # Now we need to get the claims that are in the cards rounds tags...
+      
+      # This is the cards rounds tags:
+      the_rounds_tags = Tag.find(:all, :joins => :rounds, :conditions => ["rounds.id = ?", @card.round.id])
+      
+      tags = Array.new
+      
+      for tag in the_rounds_tags
+        tags.push(tag.id)
+      end
+      
+      # And these are the claims (that have the cards rounds tags):
+      claims = Claim.find(:all, :joins => :tags, :conditions => ["tags.id IN (?)", tags], :order => 'random()')
+      
+      # The old code (that only got all random claims):
+      #claims = Claim.find(:all, :order => 'random()')
+      
+      if claims.length >= 8
+      
+        for i in 0..8 do
+          @card.squares.create :claim_id => claims[i].id, :position => i
+        end
+      
+      else
+        
+        save_ok = false
+        flash[:error] = 'Det fanns inte tillräckligt med påståenden inom den omgången för att skapa en bricka.'
+      
       end
     
     end

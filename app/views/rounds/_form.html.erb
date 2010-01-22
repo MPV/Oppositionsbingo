@@ -6,7 +6,11 @@
 <p>Taggar:</p>
 <ul class="checkbox-list">
   <% for tag in Tag.all(:order => :name) -%>
-    <li><%= check_box_tag "round[tag_ids][]", tag.id, @round.tags.include?(tag) -%> <%= tag.name -%></li>
+    <li>
+      <label class="checkbox_label">
+      <%= check_box_tag "round[tag_ids][]", tag.id, @round.tags.include?(tag) -%>
+      <%= tag.name -%></label>
+    </li>
   <% end -%>
 </ul>
 
