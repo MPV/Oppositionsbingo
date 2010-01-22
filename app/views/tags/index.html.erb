@@ -3,6 +3,7 @@
 <table class="index_table">
   <tr>
     <th>Namn</th>
+    <th>Antal påståenden</th>
     <th></th>
     <th></th>
   </tr>
@@ -10,6 +11,7 @@
 <% @tags.each do |tag| %>
   <tr>
     <td><%= link_to h(tag.name), tag %></td>
+    <td><%= tag.claims.length %></td>
     <td class="edit_column"><%= link_to 'Ändra', edit_tag_path(tag) %></td>
     <td class="delete_column"><%= link_to 'X', tag, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
