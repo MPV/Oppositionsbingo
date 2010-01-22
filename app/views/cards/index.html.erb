@@ -1,4 +1,4 @@
-<h1>Alla bingobrickor <span class="index_row_count"><%= @cards.length %>st</span></h1>
+<h1>Alla bingobrickor <% unless @cards.nil? %><span class="index_row_count"><%= @cards.length %>st</span><% end %></h1>
 
 <%= render :partial => 'table', :locals => { :cards => @cards } %>
 

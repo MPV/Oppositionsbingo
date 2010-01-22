@@ -22,7 +22,9 @@
     <li><%= link_to 'Taggar', '/tags' %></li>
   </ul>
   <div id="container">
-    <p style="color: green"><%= flash[:notice] %></p>
+    <%- [:error, :warning, :notice, :message].each do |key| -%>
+      <%= content_tag :div, flash[key], :class => 'flash', :id => key if flash[key] %>
+    <%- end -%>
     <%= yield %>
   </div>
   <div id="footer">

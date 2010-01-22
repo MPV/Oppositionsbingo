@@ -1,11 +1,4 @@
 <h1>Bingobricka nr <%= @card.id %></h1>
-<p>
-  Brickan skapades av <%=h @card.owner %><%-
-   unless @card.round.nil? 
-  -%>, hör till omgången <%= link_to h(@card.round.name), @card.round %>
-  <% end %>
-  och har <%= @card.points %> bingos.
-</p>
 
 <%
   #num_squares = @card.squares.length - 1
@@ -54,5 +47,13 @@
 <% end %>
 
 </table>
+
+<p>
+  Brickan skapades av <%=h @card.owner %><%-
+   unless @card.round.nil? 
+  -%>, hör till omgången <%= link_to h(@card.round.name), @card.round %>
+  <% end %>
+  och har <%= @card.points %> bingos.
+</p>
 
 &larr; <%= link_to 'Tillbaka', round_path(@card.round) %> eller <%= link_to 'Ändra', edit_card_path(@card) %>

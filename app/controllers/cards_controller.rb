@@ -2,7 +2,13 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.xml
   def index
-    @cards = Card.find(:all, :order => :id)
+    
+    if params[:round_id].nil?
+      @cards = Card.find(:all, :order => :id)
+    else
+      #@cards = Card.find_by_round_id(params[:round_id])
+      @cards = Card.find(:all, :conditions => { :round_id => params[:round_id] } )
+    end
 
     respond_to do |format|
       format.html # index.html.erb

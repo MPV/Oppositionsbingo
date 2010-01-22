@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :rounds, :has_many => :cards
   
-  map.resources :tags
+  map.resources :tags, :has_many => :claims
   map.resources :cards
   map.resources :squares
   map.resources :claims

@@ -2,8 +2,13 @@ class ClaimsController < ApplicationController
   # GET /claims
   # GET /claims.xml
   def index
-    @claims = Claim.find(:all, :order => :id)
-
+    
+    if params[:tag_id].nil?
+      @claims = Claim.find(:all, :order => :id)
+    else
+      @claims = Claim.find(:all, :conditions => { :tag_id => params[:tag_id] }, :order => :id)
+    end
+      
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @claims }
