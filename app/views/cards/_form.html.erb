@@ -5,5 +5,5 @@
 
 <p>
   <%= f.label :round_id, 'Omgång' %><br />
-  <%= f.collection_select(:round_id, Round.all, :id, :name, {:prompt => false}) %>
+  <%= f.collection_select(:round_id, Round.all(:order => 'id DESC'), :id, :name, {:prompt => false} ) %>
 </p>
