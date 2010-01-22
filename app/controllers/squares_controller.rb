@@ -2,7 +2,12 @@ class SquaresController < ApplicationController
   # GET /squares
   # GET /squares.xml
   def index
-    @squares = Square.find(:all, :order => :id)
+    
+    if params[:card_id].nil?
+      @squares = Square.find(:all, :order => :id)
+    else
+      @squares = Square.find(:all, :conditions => { :card_id => params[:card_id] } )
+    end
 
     respond_to do |format|
       format.html # index.html.erb
