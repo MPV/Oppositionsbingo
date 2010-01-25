@@ -1,19 +1,63 @@
 <p>
-  <%= f.label :name, 'Namn på omgången:' %><br />
+  <%= f.label :name, 'Vad ska omgången heta?' %><br />
   <%= f.text_field :name %>
 </p>
 
-<p>Taggar:</p>
+<h4>Hur stora ska bingobrickorna vara?</h4>
+<ul id="round_card_size_radio_buttons">
+  <li>
+    <label for="round_card_size_4">Små<br/>
+    <span class="description">2 x 2</span><br/>
+    <%= f.radio_button :card_size, '4' %>
+    </label>
+  </li>
+  
+  <li>
+    <label for="round_card_size_9">Normala<br/>
+    <span class="description">3 x 3</span><br/>
+    <%- if :card_size -%>
+      <%= f.radio_button :card_size, '9', { :checked => true } %>
+    <%- else -%>
+      <%= f.radio_button :card_size, '9' %>
+    <%- end -%>
+    </label>
+  </li>
+  
+  <li>
+    <label for"round_card_size">Stora<br/>
+    <span class="description">4 x 4</span><br/>
+    <%= f.radio_button :card_size, '16' %>
+    </label>
+  </li>
+  
+  <li>
+    <label for"round_card_size">Jättestora<br/>
+    <span class="description">5 x 5</span><br/>
+    <%= f.radio_button :card_size, '25' %>
+    </label>
+  </li>
+  
+</ul>
+
+<h4>Vilka typer av påståenden ska vara med i omgången?</h4>
 <ul class="checkbox-list">
   <% for tag in Tag.all(:order => :name) -%>
     <li>
       <label class="checkbox_label">
       <%= check_box_tag "round[tag_ids][]", tag.id, @round.tags.include?(tag) -%>
-      <%= tag.name -%></label>
+      <%= tag.name -%>
+      </label>
+      <%- unless tag.claims.empty? -%>
+      <span class="description">
+      <%= tag.claims.length %> påstående<%- if tag.claims.length != 1 -%>n<%- end -%>
+      </span>
+      <%- end -%>
     </li>
   <% end -%>
 </ul>
 
+<!--
 <p class="description">
   Omgångens bingobrickor kan bara få påståenden från de taggar du valt.
 </p>
+-->

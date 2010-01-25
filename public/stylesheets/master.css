@@ -38,6 +38,10 @@ form label.checkbox_label{
     cursor: pointer;
 }
 
+form label{
+    cursor: pointer;
+}
+
 .flash{
     display: block;
     margin-top: 1em;
@@ -335,6 +339,32 @@ table.card_squares_table td.used a:hover{
 #versions_table .date{
     color: #888;
     width: 9.5em;
+}
+
+#round_card_size_radio_buttons{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#round_card_size_radio_buttons li{
+    float: left;
+    height: 6.5em;
+    text-align: center;
+    width: 25%;
+}
+
+#round_card_size_radio_buttons li label{
+    cursor: pointer;
+    display: block;
+    padding: 10% 5%;
+}
+
+#round_card_size_radio_buttons li label:hover{
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    background: #eee;
 }
 
 a.button{

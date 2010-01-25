@@ -1,6 +1,7 @@
 <h1><%=h @round.name %></h1>
 
-<p>Påståenden från:</p>
+<p>Omgångens brickor är <%= @round.card_size.to_i %> rutor stora.</p>
+<p>Påståenden hämtas från dessa taggar:</p>
 <% if @round.tags.length == 0 %>
   <p>Inga taggar.</p>
 <% else %>

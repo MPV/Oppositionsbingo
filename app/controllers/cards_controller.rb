@@ -73,9 +73,9 @@ class CardsController < ApplicationController
       # The old code (that only got all random claims):
       #claims = Claim.find(:all, :order => 'random()')
       
-      if claims.length >= 8
+      if claims.length >= (@card.round.card_size.to_i - 1)
       
-        for i in 0..8 do
+        for i in 0..(@card.round.card_size.to_i - 1) do
           @card.squares.create :claim_id => claims[i].id, :position => i
         end
       
