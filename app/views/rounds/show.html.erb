@@ -1,3 +1,13 @@
+<table class="round_card_size_table">
+<% for i in 1..Math.sqrt(@round.card_size).to_i do %>
+<tr>
+  <% for j in 1..Math.sqrt(@round.card_size).to_i do %>
+  <td></td>
+  <% end %>
+</tr>
+<% end %>
+</table>
+
 <h1><%=h @round.name %></h1>
 
 <p>Omgångens brickor är <%= @round.card_size.to_i %> rutor stora.</p>

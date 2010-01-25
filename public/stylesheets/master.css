@@ -345,13 +345,15 @@ table.card_squares_table td.used a:hover{
 #round_card_size_radio_buttons{
     list-style-type: none;
     margin: 0;
-    overflow: auto;
+    overflow: hidden;
     padding: 0;
     width: 100%;
 }
 
 #round_card_size_radio_buttons li{
     float: left;
+    margin: 0;
+    padding: 0;
     text-align: center;
     width: 25%;
 }
@@ -359,20 +361,30 @@ table.card_squares_table td.used a:hover{
 #round_card_size_radio_buttons li label{
     cursor: pointer;
     display: block;
-    padding: 10% 5%;
+/*    padding: 10% 5%;*/
 }
 
 #round_card_size_radio_buttons li label:hover{
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
-    background: #eee;
+/*    background: #ddd;*/
+}
+
+#round_card_size_radio_buttons li:hover table td{
+    background: #666;
+}
+
+#round_card_size_radio_buttons .round_card_size_table{
+    float: none;
+    margin: 0.5em auto;
 }
 
 .round_card_size_table{
     background: #eee;
-    border-spacing: 0.1em;
+    border-spacing: 1px;
+    float: right;
     height: 3em;
-    margin: 0.5em auto;
+    margin-top: 1.5em;
     width: 3em;
 }
 

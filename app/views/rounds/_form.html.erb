@@ -8,6 +8,7 @@
   <% for i in 2..5 do %>
     <li>
       <label for="round_card_size_<%= i * i %>">
+      
       <%- if (i * i) == 4 -%>
         Små
       <%- elsif (i * i) == 9 -%>
@@ -17,6 +18,7 @@
       <%- elsif (i * i) == 25 -%>
         Jättestora
       <%- end -%>
+      
       <table class="round_card_size_table">
       <% for j in 1..i do %>
       <tr>
@@ -28,6 +30,7 @@
       </table>
       
       <%= f.radio_button :card_size, (i*i) %>
+      
       </label>
     </li>
   <% end %>
