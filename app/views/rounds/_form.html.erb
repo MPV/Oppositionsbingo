@@ -5,37 +5,32 @@
 
 <h4>Hur stora ska bingobrickorna vara?</h4>
 <ul id="round_card_size_radio_buttons">
-  <li>
-    <label for="round_card_size_4">Små<br/>
-    <span class="description">2 x 2</span><br/>
-    <%= f.radio_button :card_size, '4' %>
-    </label>
-  </li>
-  
-  <li>
-    <label for="round_card_size_9">Normala<br/>
-    <span class="description">3 x 3</span><br/>
-    <%- if :card_size -%>
-      <%= f.radio_button :card_size, '9', { :checked => true } %>
-    <%- else -%>
-      <%= f.radio_button :card_size, '9' %>
-    <%- end -%>
-    </label>
-  </li>
-  
-  <li>
-    <label for"round_card_size">Stora<br/>
-    <span class="description">4 x 4</span><br/>
-    <%= f.radio_button :card_size, '16' %>
-    </label>
-  </li>
-  
-  <li>
-    <label for"round_card_size">Jättestora<br/>
-    <span class="description">5 x 5</span><br/>
-    <%= f.radio_button :card_size, '25' %>
-    </label>
-  </li>
+  <% for i in 2..5 do %>
+    <li>
+      <label for="round_card_size_<%= i * i %>">
+      <%- if (i * i) == 4 -%>
+        Små
+      <%- elsif (i * i) == 9 -%>
+        Normala
+      <%- elsif (i * i) == 16 -%>
+        Stora
+      <%- elsif (i * i) == 25 -%>
+        Jättestora
+      <%- end -%>
+      <table class="round_card_size_table">
+      <% for j in 1..i do %>
+      <tr>
+        <% for k in 1..i do %>
+        <td></td>
+        <% end %>
+      </tr>
+      <% end %>
+      </table>
+      
+      <%= f.radio_button :card_size, (i*i) %>
+      </label>
+    </li>
+  <% end %>
   
 </ul>
 
