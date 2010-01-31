@@ -1,0 +1,9 @@
+<p>
+  <%= f.label :owner, 'Ditt namn' %><br />
+  <%= f.text_field :owner %>
+</p>
+
+<p>
+  <%= f.label :round_id, 'Omgång' %><br />
+  <%= f.collection_select(:round_id, Round.all(:order => 'id DESC'), :id, :name, {:prompt => false} ) %>
+</p>

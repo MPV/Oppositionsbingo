@@ -1,0 +1,53 @@
+<div id="card_<%= @card.id %>" class="panel" selected="true">
+
+<%
+  #num_squares = @card.squares.length - 1
+  
+  row = 1
+  column = 1
+%>
+
+<table class="card_squares_table columns_<%= @card.sqrt_of_n.to_i %>">
+
+<% for i in 0..(@card.squares.length - 1) do %>
+  
+  <% if i % @card.sqrt_of_n == 0 %>
+    <tr class="card_square_row row_<%= row %>" id="card_square_row_<%= row %>">
+  <% end %>
+  
+  <% 
+    square_css_classes = "square column_#{column}"
+  
+    if @card.squares[i].used == true
+      square_css_classes += ' used'
+    end
+  %>
+  <td class="<%= square_css_classes %>" id="square_<%= @card.squares[i].id %>" onclick="location.replace('/squares/<%= @card.squares[i].id %>/daub'); return(0);">
+  
+    <!--<a href="/squares/<%= @card.squares[i].id %>/daub">-->
+      <% if @card.squares[i].claim.nil? %>
+        <strong>Fel!</strong> <br/> Påstående saknas.
+      <% else %>
+        <span><%= @card.squares[i].claim.name %></span>
+      <% end %>
+    <!--</a>-->
+    
+  </td>
+  
+  <% column = column + 1 %>
+  
+  <% if i % @card.sqrt_of_n == @card.sqrt_of_n-1 %>
+    </tr>
+    <% 
+      row = row + 1
+      column = 1
+    %>
+  <% end %>
+  
+<% end %>
+
+</table>
+
+<h2>Bingobricka nr <%= @card.id %> (ägs av <%= @card.owner %>)</h2>
+
+</div>

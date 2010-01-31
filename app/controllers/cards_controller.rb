@@ -13,6 +13,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @cards }
+      format.iphone
     end
   end
 
@@ -25,6 +26,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @card }
+      format.iphone
     end
   end
 
@@ -40,6 +42,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @card }
+      format.iphone
     end
   end
 

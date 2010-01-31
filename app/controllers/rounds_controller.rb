@@ -7,6 +7,7 @@ class RoundsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @rounds }
+      format.iphone
     end
   end
 
@@ -19,6 +20,7 @@ class RoundsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @round }
+      format.iphone
     end
   end
 

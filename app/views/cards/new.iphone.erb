@@ -1,0 +1,14 @@
+<div id="new_card" title="Ny bingobricka" class="panel" selected="true">
+
+<% form_for(@card) do |f| %>
+  <%= f.error_messages %>
+  
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+  <p>
+    <%= f.submit 'Skapa bingobrickan' %>
+  </p>
+
+<% end %>
+
+</div>

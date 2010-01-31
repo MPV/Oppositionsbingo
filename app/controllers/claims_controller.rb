@@ -13,6 +13,7 @@ class ClaimsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @claims }
+      format.iphone
     end
   end
 
@@ -24,6 +25,7 @@ class ClaimsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @claim }
+      format.iphone
     end
   end
 
@@ -35,6 +37,7 @@ class ClaimsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @claim }
+      format.iphone
     end
   end
 

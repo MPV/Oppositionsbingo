@@ -1,0 +1,5 @@
+<ul title="Omgångar" selected="true">
+<% @rounds.each do |round| %>
+    <li><%= link_to h(round.name), round %></li>
+<% end %>
+</ul>

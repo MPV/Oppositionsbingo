@@ -7,4 +7,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  before_filter :check_for_iphone
+  
+  def check_for_iphone
+    if request.user_agent =~ /(Mobile\/.+Safari)/
+      request.format = :iphone
+    end
+    
+    if self.controller_name != 'welcome'
+    #  request.format = :html
+    end
+  end
+  
 end

@@ -20,3 +20,7 @@
 </script>
 
 </div>
+
+<% if iphone_user_agent? %>
+  Du har en ipown och formatet: <%= params[:format] %>
+<% end %>

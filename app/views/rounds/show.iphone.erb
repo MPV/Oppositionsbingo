@@ -1,0 +1,19 @@
+<div class="panel" selected="true" title="<%=h @round.name %>">
+
+  <h2>Bingobrickor i rundan:</h2>
+
+<% if @round.cards.length == 0 %>
+
+  <p>Inga brickor i omgången</p>
+
+<% else %>
+
+  <ul title="<%=h @round.name %>">
+  <% @round.cards.each do |card| %>
+    <li><%= link_to h(card.owner), card %></li>
+  <% end %>
+  </ul>
+
+<% end %>
+
+</div>

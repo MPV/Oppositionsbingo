@@ -1,0 +1,5 @@
+<ul title="Bingobrickor" selected="true">
+<% @cards.each do |card| %>
+  <li><%= link_to h(card.owner), card %></li>
+<% end %>
+</ul>

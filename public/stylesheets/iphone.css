@@ -1,0 +1,84 @@
+table.card_squares_table{
+    /*background: #fff;*/
+    border-spacing: 0.5em;
+    font-size: 80%;
+    height: 25em;
+    margin: 0 auto;
+    width: 23em;
+}
+table.card_squares_table td{
+    background: #e3e3e3;
+    border: 0.5em solid #e3e3e3;
+    cursor: pointer;
+    padding: 3%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.card_squares_table td:hover{
+    border-color: #999;
+}
+
+table.card_squares_table.columns_3 td{
+    height: 30%;
+    width: 30%;
+}
+
+table.card_squares_table.columns_4 td{
+    height: 22%;
+    width: 22%;
+}
+
+table.card_squares_table.columns_5 td{
+    height: 17%;
+    width: 17%;
+}
+
+table.card_squares_table td a{
+    display: block;
+    height: 100%;
+    /*
+    border: 0.5em solid #e3e3e3;
+    color: black;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    padding: 5%;
+    text-align: center;
+    text-decoration: none;
+    width: 85%;*/
+}
+
+table.card_squares_table td a span{
+    display: inline-block;
+    /*margin-top: 20%;*/
+    vertical-align: middle;
+}
+
+table.card_squares_table td a:hover{
+/*    background: #f1f1f1;*/
+    border-color: #999;
+/*    text-decoration: underline;*/
+}
+
+table.card_squares_table td.used{
+    background: lightgreen;
+    border-color: lightgreen;
+    color: green;
+}
+
+table.card_squares_table td.used:hover{
+    border-color: #999;
+}
+
+table.card_squares_table td.used a{
+    border-color: lightgreen;
+    color: black;
+    text-decoration: none;
+}
+
+table.card_squares_table td.used a:hover{
+    border-color: #999;
+    background: lightgreen !important;
+    color: black;
+}

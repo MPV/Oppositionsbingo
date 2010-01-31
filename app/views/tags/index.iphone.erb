@@ -1,0 +1,5 @@
+<ul title="Taggar" selected="true">
+<% @tags.each do |tag| %>
+    <li><%= link_to h(tag.name), tag, :target => '_self' %></li>
+<% end %>
+</ul>

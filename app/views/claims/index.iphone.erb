@@ -1,0 +1,5 @@
+<ul title="Påståenden" selected="true">
+<% @claims.each do |claim| %>
+    <li><%= link_to h(claim.name), claim %></li>
+<% end %>
+</ul>
